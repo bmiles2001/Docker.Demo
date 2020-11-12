@@ -1,0 +1,9 @@
+﻿version: "3.8"
+
+services:
+  server:
+    ports:
+      - "9901:80"
+    image: netto1/dockerdemoserver
+    deploy:
+      replicas: 5

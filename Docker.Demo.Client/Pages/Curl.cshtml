@@ -1,0 +1,19 @@
+﻿@page
+@model Client.Pages.CurlModel
+@{
+    Layout = null;
+}
+
+@if (Model.FrontendInfo != null)
+{
+    @Html.Raw($"[FrontEnd]: [Hostname]\t{Model.FrontendInfo.Hostname}\t[IP Address] {Model.FrontendInfo.IPAddress}");
+}
+
+@if (Model.BackendInfo != null)
+{
+    @Html.Raw($"[BackEnd]:  [Hostname]\t{Model.BackendInfo.Hostname}\t[IP Address] {Model.BackendInfo.IPAddress}");
+}
+else
+{
+    @Html.Raw($"[BackEnd]:  Communication Error: {Model.ErrorMessage}");
+}

@@ -1,0 +1,39 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<table>
+
+    @if (Model.FrontendInfo != null)
+    {
+        <tr>
+            <td>Frontend Hostname:</td>
+            <td>@Model.FrontendInfo.Hostname</td>
+        </tr>
+        <tr>
+            <td>IP Address:</td>
+            <td>@Model.FrontendInfo.IPAddress</td>
+        </tr>
+    }
+
+    @if (Model.BackendInfo != null)
+    {
+        <tr>
+            <td>Backend Hostname:</td>
+            <td>@Model.BackendInfo.Hostname</td>
+        </tr>
+        <tr>
+            <td>IP Address:</td>
+            <td>@Model.BackendInfo.IPAddress</td>
+        </tr>
+    }
+    else
+    {
+        <tr>
+            <td>Error with communicating with Backend</td>
+            <td>@Model.ErrorMessage</td>
+        </tr>
+    }
+</table>
