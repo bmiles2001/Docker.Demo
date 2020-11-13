@@ -6,7 +6,6 @@ services:
       context: ./
       dockerfile: Dockerfile-Client
     scale: 5
-    restart: always
   dockerdemo_server:
     scale: 5
     build:
